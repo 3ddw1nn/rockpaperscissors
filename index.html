@@ -7,6 +7,92 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+      let computerScore = 0;
+      let userScore = 0;
+
+      function playRound(userSelection, computerSelection) {
+        if (userSelection == "Rock" && computerSelection == "Rock") {
+            userScore++
+          return "Yall Both Suck! Rock";
+        } else if (userSelection == "Scissors" && computerSelection == "Scissors") {
+          return "Yall Both Suck! Scissors";
+        } else if (userSelection == "Paper" && computerSelection == "Paper") {
+          return "Yall Both Suck! Paper";
+        } else if (userSelection == "Rock" && computerSelection == "Scissors") {
+            userScore++
+          return "Good Job Bitch You Won! Rock beats Scissors";
+        } else if (userSelection == "Paper" && computerSelection == "Rock") {
+            userScore++
+          return "Good Job Bitch You Won! Paper beats Rock";
+        } else if (userSelection == "Scissors" && computerSelection == "Paper") {
+            userScore++
+          return "Good Job Bitch You Won! Scissors beats Paper";
+        } else if (userSelection == "Scissors" && computerSelection == "Rock") {
+            computerScore++
+          return "You Suck! Scissors loses to Rock";
+        } else if (userSelection == "Rock" && computerSelection == "Paper" ) {
+            computerScore++
+          return "You Suck! Rock loses to Paper";
+        } else if (userSelection == "Paper" && computerSelection == "Scissors") {
+            computerScore++
+          return "You Suck! Paper loses to Scissors";
+        } else return "Error";
+      }
+
+        function computerPlay(){
+        let randomNumber = Math.floor(Math.random() * 3 + 1)
+        switch (randomNumber){
+          case 1:
+            return "Rock"
+          case 2:
+            return "Paper"
+          case 3:
+          return "Scissors"
+          }
+       }
+      let userSelection = "";
+      let computerSelection = computerPlay();
+
+      function game(){
+        gameOver
+        userSelection = prompt();
+        computerSelection = computerPlay();
+        console.log(userSelection);
+        console.log(computerSelection);
+        console.log(playRound(userSelection, computerSelection));
+        userSelection = prompt();
+        computerSelection = computerPlay();
+        console.log(userSelection);
+        console.log(computerSelection);
+        console.log(playRound(userSelection, computerSelection));
+        userSelection = prompt();
+        computerSelection = computerPlay();
+        console.log(userSelection);
+         console.log(computerSelection);
+        console.log(playRound(userSelection, computerSelection));
+        userSelection = prompt();
+        computerSelection = computerPlay();
+        console.log(userSelection);
+         console.log(computerSelection);
+        console.log(playRound(userSelection, computerSelection));
+        userSelection = prompt();
+        computerSelection = computerPlay();
+        console.log(userSelection);
+        console.log(computerSelection);
+        console.log(playRound(userSelection, computerSelection));
+        console.log(gameOver);
+
+      }
+            function gameOver(){
+        return userScore === 2 || computerScore === 2
+      }
+
+      game();
+      console.log(userSelection);
+      console.log(computerSelection);
+      console.log(userScore);
+      console.log(computerScore);
+    </script>
 </body>
 </html>
